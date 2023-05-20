@@ -6,6 +6,7 @@ import Choose from "./src/text2image/components/Choose"
 import Generate from "./src/text2image/components/Generate";
 
 //
+//
 export default function App() {
     const Stack = createNativeStackNavigator();
  
