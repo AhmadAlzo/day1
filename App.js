@@ -1,20 +1,20 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import Choose from './components/Choose';
+// import Generate from './src/components/Generate';
+import Choose from "./src/text2image/components/Choose"
+import Generate from "./src/text2image/components/Generate";
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    const Stack = createNativeStackNavigator();
+ 
+    return (
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Choose">
+        <Stack.Screen name="Choose" component={Choose} options={{ headerShown: false }}/>
+        <Stack.Screen name="Generate" component={Generate} options={{ headerShown: false }}/>
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
